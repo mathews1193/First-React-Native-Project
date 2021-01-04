@@ -1,5 +1,4 @@
 import React from 'react';
-import { NativeRouter, Route, Switch} from "react-router-native";
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import Home from './src/components/Home/Home';
@@ -10,7 +9,6 @@ import ShoppingList from './src/components/Shopping List/ShoppingList';
 
 export default function App() {
   return (
-    <NativeRouter>
       <View style={styles.container}>
         <Text>Hello World!</Text>
         <Button
@@ -23,17 +21,9 @@ export default function App() {
         title="Delete"
         onPress={() => alert('Delete')}
         />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/login" component={Login} />
-          <Route path="/about" component={About} />
-          <Route path="/orders" component={Orders} />
-          <Route path="/shopping-list" component={ShoppingList} />
-        </Switch>
 
         <StatusBar style="auto" />
       </View>
-    </NativeRouter>
   );
 }
 
